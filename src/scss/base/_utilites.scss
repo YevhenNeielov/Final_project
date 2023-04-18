@@ -1,0 +1,53 @@
+@function rem($target) {
+  @return ($target / $baseFontSize) * 1rem;
+}
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &_#{$modifier} {
+    @content;
+  }
+}
+
+@mixin setCssVar($cssProp, $val) {
+  $prefix: if(variable-exists(prefix), #{$prefix}, "");
+  --#{$prefix}#{$cssProp}: #{$val};
+}
+
+@mixin getCssVar($cssProp, $cssVar: $cssProp) {
+  $prefix: if(variable-exists(prefix), #{$prefix}, "");
+  #{$cssProp}: var(--#{$prefix}#{$cssVar});
+}
+
+@mixin before($img, $w, $h) {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(#{$i}#{$img}) no-repeat;
+    width: $w;
+    height: $h;
+    @content;
+  }
+}
+
+@mixin absolute($w, $h) {
+  position: absolute;
+  width: $w;
+  height: $h;
+  @content;
+}
+
+@mixin image() {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  @content;
+}

@@ -1,0 +1,7 @@
+.catproduct {
+  padding: 0 20px;
+
+  @include e(text) {
+    min-height: 70px;
+  }
+}

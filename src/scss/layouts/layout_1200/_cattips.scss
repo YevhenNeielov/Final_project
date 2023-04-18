@@ -1,0 +1,29 @@
+.cattips {
+  grid-template-columns: auto 590px repeat(2, 20px 285px) auto;
+  @include e(intro) {
+    grid-column: 2 / -2;
+  }
+
+  @include e(article) {
+    @include m(main) {
+      grid-column: 2;
+      height: 0;
+    }
+
+    &_1,
+    &_3,
+    &_5 {
+      grid-column: 4;
+    }
+
+    &_2,
+    &_4,
+    &_6 {
+      grid-column: 6;
+    }
+  }
+}
+
+.fixedpost {
+  width: 590px;
+}

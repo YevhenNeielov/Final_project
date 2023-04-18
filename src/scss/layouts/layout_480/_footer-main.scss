@@ -1,0 +1,7 @@
+.footer-instagram {
+  grid-template-columns: 1fr 1fr;
+
+  @include e(title) {
+    grid-column: 1 / -1;
+  }
+}

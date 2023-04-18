@@ -1,0 +1,170 @@
+.catproduct {
+  padding: 0 10px;
+  margin-bottom: 40px;
+
+  @include e(title) {
+    text-align: center;
+    font-size: rem(32px);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: $colorText;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+  }
+
+  @include e(image-box-main) {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  @include e(goods) {
+    margin: 0 -5px;
+  }
+
+  @include e(text) {
+    color: #2a2926;
+    font-size: rem(17.5px);
+    line-height: 1.25;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    min-height: 110px;
+    margin-bottom: 10px;
+  }
+
+  @include e(image-box) {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 125%;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  @include e(image) {
+    @include image() {
+    }
+
+    @include m(front) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @include m(back) {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  @include e(status) {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: $colorSale;
+    color: $white;
+    font-family: $FontFamilySource;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 400;
+    padding: 8px 20px;
+    border-radius: 15px;
+    z-index: 1;
+  }
+
+  @include e(quickview-box) {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 40px;
+    transform: translateY(100%);
+  }
+
+  @include e(quickview-link) {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: $colorButton;
+  }
+
+  @include e(svg) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include e(quickview-text) {
+    font-size: rem(14px);
+    line-height: 1.75;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @include e(tag-box) {
+    order: 2;
+    margin-bottom: 10px;
+  }
+
+  @include e(tag) {
+    color: $colorButton;
+    font-size: rem(14px);
+    line-height: 1.75;
+    letter-spacing: 0;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @include e(price-box-total) {
+    order: 3;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @include e(price) {
+    color: $colorMenuText;
+    line-height: 20px;
+    letter-spacing: 0;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    @include m(discount) {
+      text-decoration: line-through;
+      font-size: rem(14px);
+      margin-right: 3px;
+    }
+  }
+
+  @include e(cart-box) {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    transform: translate(0, 125%);
+  }
+
+  @include e(cart) {
+    color: $colorButton;
+    font-size: rem(16px);
+    line-height: 1.75;
+    letter-spacing: 0;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.catproduct__goods .slick-slide > div {
+  margin: 0 5px;
+}

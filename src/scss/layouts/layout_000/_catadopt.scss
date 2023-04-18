@@ -1,0 +1,161 @@
+.catadopt {
+  background: url(#{$i}BG_adopt-cat.png) no-repeat;
+  background-size: cover;
+  margin-top: -20px;
+  margin-bottom: 70px;
+  padding: 70px 10px 200px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto minmax(200px, 1200px) auto;
+
+  @include e(title) {
+    font-size: rem(32px);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: $colorText;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    margin-bottom: 10px;
+    grid-column: 2 / -2;
+  }
+
+  @include e(text) {
+    line-height: 1.5;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: $colorMenuText;
+    margin-bottom: 60px;
+    grid-column: 2 / -2;
+  }
+
+  @include e(slider) {
+    grid-column: 2 / -2;
+    margin: 0 -5px;
+  }
+
+  @include e(slider-dots-box) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  @include e(image-box) {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include e(image-link) {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 100%;
+    display: block;
+  }
+
+  @include e(image) {
+    @include image() {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  @include e(image-description-box) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include e(flex-description) {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+
+  @include e(link) {
+    color: $white;
+    line-height: 1.75;
+    letter-spacing: 0;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @include e(link-big) {
+    color: $white;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  @include e(svg) {
+    --stroke-color: white;
+    opacity: 0;
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+
+  @include e(button-box) {
+    grid-column: 2 / -2;
+  }
+
+  @include e(button) {
+    display: inline-block;
+    background-color: #bca789;
+    letter-spacing: 1px;
+    color: $white;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    padding: 20px 60px;
+    border-radius: 5px;
+  }
+}
+
+.catadopt__slider .slick-slide > div {
+  margin: 0 5px;
+}
+
+.catadopt__slider .catadopt__slider-dots-box button {
+  font-size: 0;
+  margin: 0 10px;
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  background-color: #999;
+  cursor: pointer;
+  position: relative;
+  transition: 450ms;
+}
+
+.catadopt__slider .catadopt__slider-dots-box button svg {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  opacity: 0;
+  stroke-dasharray: 39 39;
+  stroke-dashoffset: 39;
+  transition: 450ms;
+}
+
+.catadopt__slider .slick-active button {
+  background-color: transparent;
+}
+
+.catadopt__slider .slick-active button svg {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}

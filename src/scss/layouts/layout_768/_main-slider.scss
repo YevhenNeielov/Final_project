@@ -1,0 +1,21 @@
+.main-slider {
+  @include e(box) {
+    justify-items: start;
+  }
+
+  @include e(text-block) {
+    text-align: initial;
+    align-items: initial;
+    padding: 1px 10px;
+    max-width: 80%;
+  }
+
+  @include e(text) {
+    padding: 0 10px;
+  }
+
+  @include e(link) {
+    padding: 15px 10px;
+    width: 200px;
+  }
+}

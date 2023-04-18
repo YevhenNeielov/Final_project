@@ -1,0 +1,30 @@
+.catinfo {
+  @include e(title) {
+    font-size: rem(68px);
+  }
+
+  @include e(link) {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      background-color: $colorMenuText;
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      transform: translateX(150%) skew(45deg);
+      transition: 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      &::after {
+        transform: none;
+      }
+    }
+  }
+}

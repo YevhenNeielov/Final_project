@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 0; height: 0; visibility: hidden; position: absolute;" aria-hidden="true">
+<symbol  viewBox='0 0 20 20' id='arrow_right'>
+    <path fill="none" stroke="var(--stroke-color, #ffffff)" d="m10 5 5 4.5-5 4.5M4 9.5h11"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='arrow_up'>
+    <path fill="var(--fill-color, #000000)" d="m10.5 4 4.87 5.4-.74.68-4.13-4.59-4.13 4.59-.74-.68z"></path><path fill="none" stroke="var(--stroke-color, #000000)" d="M10.5 16V5"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='cart'>
+    <path d="M16 4v11.38l-1.24.62H5.24L4 15.38V4h12m-2.5-3h-7l-.5.52V3H3v13l2 1h10l2-1V3h-3V1.52L13.5 1ZM7 3V2h6v1Z"></path><path d="M7 7H6V6h1Zm7-1h-1v1h1ZM7 4H6v1h1Zm7 0h-1v1h1Z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='eye'>
+    <path fill="#816741" d="M10 6c3.82 0 7.17 1.7 8 4-.78 2.3-4.14 4-8 4s-7.17-1.7-8-4c.78-2.3 4.14-4 8-4m0-1c-4.53 0-8.27 2.16-9 5 .73 2.84 4.47 5 9 5s8.27-2.16 9-5c-.73-2.84-4.47-5-9-5Z"></path><path fill="#816741" d="M10 8h.26a2 2 0 0 0 1.48 3A2 2 0 1 1 10 8m0-1a3 3 0 1 0 2.93 2.36A1 1 0 1 1 12 8a1 1 0 0 1 .27.05A3 3 0 0 0 10 7Z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='facebook'>
+    <path fill="var(--fill-color, #000000)" d="M11 10h2.6l.4-3h-3V5.3c0-.9.2-1.5 1.5-1.5H14V1.1c-.3 0-1-.1-2.1-.1C9.6 1 8 2.4 8 5v2H5.5v3H8v8h3v-8z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='glass'>
+    <path d="M11.5 2.46a6 6 0 0 0-4.56 9.89l-3.3 3.3.71.71 3.3-3.3a6 6 0 1 0 3.85-10.6Zm0 11a5 5 0 1 1 5-5 5 5 0 0 1-5 5Z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='instagram'>
+    <path fill="var(--fill-color, #000000)" d="M13.55 1H6.46C3.45 1 1 3.44 1 6.44v7.12c0 3 2.45 5.44 5.46 5.44h7.08c3.02 0 5.46-2.44 5.46-5.44V6.44c.01-3-2.44-5.44-5.45-5.44zm3.95 13c0 1.93-1.57 3.5-3.5 3.5H6c-1.93 0-3.5-1.57-3.5-3.5V6c0-1.93 1.57-3.5 3.5-3.5h8c1.93 0 3.5 1.57 3.5 3.5v8z"></path><circle fill="var(--fill-color, #000000)" cx="14.87" cy="5.26" r="1.09"></circle><path fill="var(--fill-color, #000000)" d="M10.03 5.45c-2.55 0-4.63 2.06-4.63 4.6 0 2.55 2.07 4.61 4.63 4.61s4.63-2.061 4.63-4.61a4.626 4.626 0 0 0-4.63-4.6zm.05 7.55c-1.66 0-3-1.34-3-2.99 0-1.65 1.34-2.99 3-2.99s3 1.34 3 2.99c0 1.65-1.34 2.99-3 2.99z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='menu'>
+    <path d="M2 4h16v1H2Zm0 5h16v1H2Zm0 5h16v1H2Z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='menu_desktop'>
+    <path d="M2 4h16v1H2Zm2 10h14v1H4Zm4-5h10v1H8Z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='tik-tok'>
+    <path fill="var(--fill-color, #000000)" d="M18.252 8.2a8.205 8.205 0 0 1-4.796-1.534v6.982a6.35 6.35 0 1 1-5.478-6.292v3.511a2.914 2.914 0 1 0 2.04 2.78V0h3.438c-.002.29.022.58.073.866A4.773 4.773 0 0 0 15.635 4a4.743 4.743 0 0 0 2.617.786V8.2Z"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='twitter'>
+    <path fill="var(--fill-color, #000000)" d="M19 4.74a7.587 7.587 0 0 1-2.119.58 3.715 3.715 0 0 0 1.622-2.04 7.331 7.331 0 0 1-2.344.89A3.682 3.682 0 0 0 13.464 3a3.698 3.698 0 0 0-3.596 4.539 10.482 10.482 0 0 1-7.614-3.86c-.318.54-.5 1.181-.5 1.86 0 1.281.651 2.411 1.643 3.071a3.654 3.654 0 0 1-1.674-.461v.04a3.71 3.71 0 0 0 2.963 3.631 4.083 4.083 0 0 1-1.668.06 3.701 3.701 0 0 0 3.451 2.569 7.467 7.467 0 0 1-4.587 1.57 6.44 6.44 0 0 1-.882-.05 10.439 10.439 0 0 0 5.662 1.66c6.792 0 10.508-5.629 10.508-10.5 0-.16-.004-.32-.013-.48A7.533 7.533 0 0 0 19 4.74"></path>
+  </symbol><symbol  viewBox='0 0 20 20' id='cross'>
+    <path fill="none" stroke="#000" stroke-width="1.06" d="M16 16 4 4m12 0L4 16"></path>
+  </symbol></svg>

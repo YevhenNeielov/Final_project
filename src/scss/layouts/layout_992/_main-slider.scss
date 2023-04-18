@@ -1,0 +1,55 @@
+.main-slider {
+  @include e(arrows) {
+    display: initial;
+  }
+
+  @include e(arrow) {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 20px);
+    display: block;
+    z-index: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+
+    &:hover {
+      background: rgba(0, 0, 0, 1);
+    }
+
+    @include m(prev) {
+      left: 10px;
+    }
+    @include m(next) {
+      right: 10px;
+      transform: rotate(180deg);
+    }
+  }
+
+  @include e(link) {
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &:hover {
+      border-color: $white;
+      color: $colorButton;
+      transform: translate(1px, 1px);
+    }
+  }
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.main-slider-container:hover .main-slider__arrow {
+  opacity: 1;
+}

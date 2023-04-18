@@ -1,0 +1,58 @@
+.cattips {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+
+  @include e(intro) {
+    grid-column: 1 / -1;
+  }
+
+  @include e(article) {
+    grid-column: 3;
+    @include m(main) {
+      grid-column: 1;
+      height: 0;
+    }
+  }
+
+  @include e(image-box) {
+    overflow: hidden;
+  }
+
+  @include e(image) {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @include e(date) {
+    transition: 0.3s;
+
+    &:hover {
+      color: $colorHoverText;
+    }
+  }
+
+  @include e(title-link) {
+    transition: 0.3s;
+
+    &:hover {
+      color: $colorHoverText;
+    }
+  }
+
+  @include e(tags) {
+    transition: 0.3s;
+
+    &:hover {
+      color: $colorHoverText;
+    }
+  }
+}
+
+.fixedpost {
+  position: fixed;
+  top: 101px;
+  width: calc(50% - 10px);
+}

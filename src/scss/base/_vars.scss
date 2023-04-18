@@ -1,0 +1,46 @@
+$google-font: "https://fonts.googleapis.com/css2?family=Lato&family=Signika:wght@400;600;700&family=Source+Sans+Pro&display=swap";
+@import url($google-font);
+
+$FontFamilySignika: "Signika", sans-serif;
+$FontFamilySource: "Source Sans Pro", sans-serif;
+$FontFamilyLato: "Lato", sans-serif;
+$baseFontSize: 16px;
+$baseFontWeight: 600;
+
+$prefix: finalProject- !default;
+
+$i: "../i/";
+
+$black: #000000;
+$white: #ffffff;
+$colorBlack: #060606 !default;
+$colorButton: #816741 !default;
+$colorButtonBackground: #bca789 !default;
+$colorButtonNewBackground: #c3a16c !default;
+$colorMenuText: #484747 !default;
+$colorSmallMenuText: #0e0e0e !default;
+$colorNumbers: #726240 !default;
+$colorText: #2a2926 !default;
+$colorFooterText: #e0e0e0 !default;
+$colorHoverText: #6d6d6d !default;
+$colorSale: #f8860a !default;
+$colorFooterHover: #bd9962 !default;
+$colorHeaderText: #5e5e5e !default;
+
+$colors: (
+  "black": $black,
+  "white": $white,
+  "colorBlack": $colorBlack,
+  "colorButton": $colorButton,
+  "colorButtonBackground": $colorButtonBackground,
+  "colorButtonNewBackground": $colorButtonNewBackground,
+  "colorMenuText": $colorMenuText,
+  "colorSmallMenuText": $colorSmallMenuText,
+  "colorNumbers": $colorNumbers,
+  "colorText": $colorText,
+  "colorFooterText": $colorFooterText,
+  "colorHoverText": $colorHoverText,
+  "colorSale": $colorSale,
+  "colorFooterHover": $colorFooterHover,
+  "colorHeaderText": $colorHeaderText,
+) !default;

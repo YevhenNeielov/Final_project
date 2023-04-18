@@ -1,0 +1,106 @@
+.main-slider {
+  @include e(arrows) {
+    display: none;
+  }
+
+  @include e(item) {
+    background-size: cover;
+    height: 100vh;
+
+    @include m(first) {
+      background: url(#{$i}banner1.jpg) no-repeat 50% 50%;
+    }
+
+    @include m(second) {
+      background: url(#{$i}banner2.jpg) no-repeat 50% 50%;
+    }
+  }
+
+  @include e(box) {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto minmax(auto, 1200px) auto;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @include e(text-block) {
+    grid-column: 2;
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 1px;
+  }
+
+  @include e(text) {
+    margin-bottom: 26px;
+    color: $colorText;
+    position: relative;
+
+    @include m(question) {
+      order: -1;
+      font-weight: $baseFontWeight;
+      color: $colorButton;
+      font-size: clamp(11px, 2.1vw, 18px);
+      animation: textAnimateFromUp 1s ease;
+    }
+
+    @include m(title) {
+      font-weight: 700;
+      font-size: clamp(24px, 6vw, 72px);
+      animation: textAnimateFromDown 1.3s ease;
+    }
+
+    @include m(content) {
+      font-size: clamp(11px, 2.1vw, 16px);
+      font-family: $FontFamilyLato;
+      font-weight: 400;
+      animation: textAnimateFromDown 1s ease;
+    }
+  }
+
+  @include e(link) {
+    color: $colorText;
+    font-size: clamp(11px, 2.1vw, 16px);
+    font-weight: 700;
+    width: 150px;
+    padding: 10px 0;
+    animation: textAnimateOpacity 1s ease;
+  }
+}
+
+@keyframes textAnimateFromDown {
+  from {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes textAnimateFromUp {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes textAnimateOpacity {
+  from {
+    scale: 0.9;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}

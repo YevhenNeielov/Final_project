@@ -1,0 +1,5 @@
+.catproduct {
+  @include e(text) {
+    min-height: 70px;
+  }
+}

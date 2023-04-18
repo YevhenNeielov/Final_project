@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Final project</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <h1 class="header__title">
+        <span class="sr-only">Save animals</span>
+      </h1>
+
+      <div class="header__image-box">
+        <a href="#">
+          <img class="header__image" src="i/logo.png" alt="logo" />
+        </a>
+      </div>
+
+      <nav class="menu">
+        <ul class="desktop-menu">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Pages</a>
+            <ul class="grid-pages">
+              <li class="col-1 col-main">
+                <a class="a-main" href="#">Pre-Build Layouts</a>
+              </li>
+              <li class="col-1 row-1">
+                <a href="#">About Us</a>
+              </li>
+              <li class="col-1 row-2">
+                <a href="#">Join Us</a>
+              </li>
+              <li class="col-1 row-3">
+                <a href="#">Team</a>
+              </li>
+              <li class="col-1 row-4">
+                <a href="#">Team Member Detail</a>
+              </li>
+              <li class="col-2 row-1">
+                <a href="#">What We Do</a>
+              </li>
+              <li class="col-2 row-2">
+                <a href="#">FAQ</a>
+              </li>
+              <li class="col-2 row-3">
+                <a href="#">Gallery</a>
+              </li>
+              <li class="col-2 row-4">
+                <a href="#">Pricing Plans</a>
+              </li>
+              <li class="col-3 row-1">
+                <a href="#">Coming Soon v1</a>
+              </li>
+              <li class="col-3 row-2">
+                <a href="#">Coming Soon v2</a>
+              </li>
+              <li class="col-3 row-3">
+                <a href="#">Contact Us v1</a>
+              </li>
+              <li class="col-3 row-4">
+                <a href="#">Contact Us v2</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Shop</a>
+            <ul class="grid-shop">
+              <li class="col-1 row-0 col-main">
+                <a class="a-main" href="#">Product Types</a>
+              </li>
+              <li class="col-1 row-1">
+                <a href="#">Product - Simple</a>
+              </li>
+              <li class="col-1 row-2">
+                <a href="#">Product - Affiliate</a>
+              </li>
+              <li class="col-1 row-3">
+                <a href="#">Product - Variable</a>
+              </li>
+              <li class="col-1 row-4">
+                <a href="#">Product - Grouped</a>
+              </li>
+              <li class="col-1 row-5">
+                <a href="#">Product - Digital Download</a>
+              </li>
+              <li class="col-1 row-6">
+                <a href="#">Product - On Sale</a>
+              </li>
+              <li class="col-2 row-0 col-main">
+                <a class="a-main" href="#">Shop Pages</a>
+              </li>
+              <li class="col-2 row-1">
+                <a href="#">Order Tracking Form</a>
+              </li>
+              <li class="col-2 row-2">
+                <a href="#">My account</a>
+              </li>
+              <li class="col-2 row-3">
+                <a href="#">Checkout</a>
+              </li>
+              <li class="col-2 row-4">
+                <a href="#">Cart</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+            <ul class="grid-blog">
+              <li>
+                <a href="#">Blog Archive</a>
+              </li>
+              <li>
+                <a href="#">Blog Single</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Adoption</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__svg-box">
+        <svg
+          class="header__svg header__svg_cart"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use xlink:href="i/svg/sprite.svg#cart" />
+        </svg>
+        <svg
+          class="header__svg header__svg_glass"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use xlink:href="i/svg/sprite.svg#glass" />
+        </svg>
+        <svg
+          class="header__svg header__svg_menu-desktop"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use xlink:href="i/svg/sprite.svg#menu_desktop" />
+        </svg>
+      </div>
+
+      <div class="dark-overlay"></div>
+
+      <a class="mobile-button" href="#">
+        <svg
+          class="header__svg header__svg_menu"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use xlink:href="i/svg/sprite.svg#menu" /></svg
+      ></a>
+
+      <div class="mobile-menu">
+        <a class="mobile-button mobile-button_inside" href="#">
+          <svg
+            class="header__svg header__svg_cross"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use xlink:href="i/svg/sprite.svg#cross" />
+          </svg>
+        </a>
+
+        <nav class="mobile-nav">
+          <ul>
+            <li>
+              <a class="colorchange" href="#">Home</a>
+            </li>
+            <li class="has-submenu">
+              <a class="is-submenu colorchange" href="#">Pages</a>
+              <ul>
+                <li class="has-submenu">
+                  <a class="is-submenu colorchange" href="#"
+                    >Pre-Built Layouts</a
+                  >
+                  <ul>
+                    <li>
+                      <a class="colorchange" href="#">About Us</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Join Us</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Team</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Team Member Detail</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a class="is-submenu colorchange" href="#">Area 2</a>
+                  <ul>
+                    <li>
+                      <a class="colorchange" href="#">What We Do</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">FAQ</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Gallery</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Pricing Plans</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a class="is-submenu colorchange" href="#">Area 3</a>
+                  <ul>
+                    <li>
+                      <a class="colorchange" href="#">Coming Soon v1</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Coming Soon v2</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Contact Us v1</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Contact Us v2</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="has-submenu">
+              <a class="is-submenu colorchange" href="#">Shop</a>
+              <ul>
+                <li class="has-submenu">
+                  <a class="is-submenu colorchange" href="#">Product Types</a>
+                  <ul>
+                    <li>
+                      <a class="colorchange" href="#">Product Types</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Product - Simple</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Product - Affiliate</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Product - Variable</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Product - Grouped</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#"
+                        >Product - Digital Download</a
+                      >
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Product - On Sale</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a class="is-submenu colorchange" href="#">Shop Pages</a>
+                  <ul>
+                    <li>
+                      <a class="colorchange" href="#">Order Tracking Form</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">My account</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Checkout</a>
+                    </li>
+                    <li>
+                      <a class="colorchange" href="#">Cart</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="has-submenu">
+              <a class="is-submenu colorchange" href="#">Blog</a>
+              <ul>
+                <li>
+                  <a class="colorchange" href="#">Blog Archive</a>
+                </li>
+                <li>
+                  <a class="colorchange" href="#">Blog Single</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="colorchange" href="#">Adoption</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile__svg-box">
+          <a class="mobile__svg-link" href="#">
+            <svg class="mobile__svg" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="i/svg/sprite.svg#facebook" /></svg
+          ></a>
+          <a class="mobile__svg-link" href="#">
+            <svg class="mobile__svg" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="i/svg/sprite.svg#twitter" /></svg
+          ></a>
+          <a class="mobile__svg-link" href="#">
+            <svg class="mobile__svg" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="i/svg/sprite.svg#instagram" /></svg
+          ></a>
+          <a class="mobile__svg-link" href="#">
+            <svg class="mobile__svg" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="i/svg/sprite.svg#tik-tok" /></svg
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="main-slider-container">
+        <div class="main-slider__arrows"></div>
+        <div class="main-slider" id="main-slider">
+          <div class="main-slider__item main-slider__item_first">
+            <div class="main-slider__box">
+              <div class="main-slider__text-block">
+                <h2 class="main-slider__text main-slider__text_title">
+                  This is the place where cat lovers gather to meow and purr,
+                  what else? Cats!
+                </h2>
+                <p class="main-slider__text main-slider__text_question">
+                  Do you love cats?
+                </p>
+                <p class="main-slider__text main-slider__text_content">
+                  You can share stories and ideas and give and receive advice
+                  about health, illnesses, products and all things feline.
+                </p>
+                <a class="main-slider__link" href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="main-slider__item main-slider__item_second">
+            <div class="main-slider__box">
+              <div class="main-slider__text-block">
+                <h2 class="main-slider__text main-slider__text_title">
+                  This is the place where cat lovers gather to meow and purr,
+                  what else? Cats!
+                </h2>
+                <p class="main-slider__text main-slider__text_question">
+                  Do you love cats?
+                </p>
+                <p class="main-slider__text main-slider__text_content">
+                  You can share stories and ideas and give and receive advice
+                  about health, illnesses, products and all things feline.
+                </p>
+                <a class="main-slider__link" href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="catinfo">
+        <article class="catinfo__learn">
+          <h2 class="catinfo__title">
+            Now you can better understand, love and care for your pet
+          </h2>
+          <p class="catinfo__text">
+            Here you'll find the best growing collection of cat and kitten
+            related information, products and resources.
+          </p>
+          <a href="#" class="catinfo__link">Learn More</a>
+        </article>
+
+        <div class="catinfo__image-box">
+          <img
+            class="catinfo__image"
+            src="i/front_blog_cat-kitty.jpg"
+            alt="kittens"
+          />
+        </div>
+
+        <article class="catinfo__tips">
+          <h2 class="catinfo__title">Tips for new cat owners</h2>
+          <p class="catinfo__text">
+            We have lots of advice for cat owners - including tips on
+            understanding cat behavior; when or why to neuter and specific
+            advice on how to look after a kitten during those first few weeks
+            and months.
+          </p>
+        </article>
+
+        <article class="catinfo__list">
+          <section class="catinfo__section">
+            <p class="catinfo__number catinfo__number_1">01.</p>
+            <h2 class="catinfo__title-bottom catinfo__title-bottom_1">
+              Cats are independent
+            </h2>
+            <p class="catinfo__text-bottom catinfo__text-bottom_1">
+              Survival is a solitary affair for cats; they are self-reliant for
+              food, shelter, grooming and territory defence.
+            </p>
+          </section>
+          <section class="catinfo__section">
+            <p class="catinfo__number catinfo__number_2">02.</p>
+            <h2 class="catinfo__title-bottom catinfo__title-bottom_2">
+              Cats are territorial
+            </h2>
+            <p class="catinfo__text-bottom catinfo__text-bottom_2">
+              A cat’s territory is an area that is defended, aggressively if
+              required, against other cats. They use a range of methods to mark
+              their territory.
+            </p>
+          </section>
+          <section class="catinfo__section">
+            <p class="catinfo__number catinfo__number_3">03.</p>
+            <h2 class="catinfo__title-bottom catinfo__title-bottom_3">
+              Cats are playful
+            </h2>
+            <p class="catinfo__text-bottom catinfo__text-bottom_3">
+              Cats are intelligent and need both mental and physical
+              stimulation. Play is important as it improves motor skills,
+              provides brain training.
+            </p>
+          </section>
+        </article>
+      </div>
+
+      <div class="cattips">
+        <div class="cattips__intro">
+          <h2 class="cattips__main-title">Cat care tips and advice</h2>
+          <p class="cattips__main-text">
+            There are likely hundreds of adoptable cats in your local animal
+            shelters or rescues right now who would love to join your family.
+            Helping vulnerable animals and keeping pets in safe and loving homes
+            requires a commitment from all of us. When we work together under a
+            common cause.
+          </p>
+        </div>
+        <article class="cattips__article cattips__article_main">
+          <div class="cattips__fixed">
+            <a href="#">
+              <div class="cattips__image-box cattips__image-box_main">
+                <img
+                  class="cattips__image"
+                  src="i/gallary0_main.jpg"
+                  alt="laying cat"
+                />
+              </div>
+            </a>
+
+            <div class="cattips__text-box">
+              <div class="cattips__link-box">
+                <h2 class="cattips__title cattips__title_first">
+                  <a class="cattips__title-link" href="#"
+                    >Learn From These Mistakes Before You Learn Cat</a
+                  >
+                </h2>
+              </div>
+              <div class="cattips__link-box cattips__link-box_tags">
+                <a class="cattips__tags" href="#">Cat Care</a>
+              </div>
+              <div class="cattips__date-info">
+                <a class="cattips__date" href="#">Pabu</a>
+                <span>|</span>
+                <a class="cattips__date" href="#">June 2, 2018</a>
+              </div>
+              <p class="cattips__small-text">
+                Nulla sit amet mauris non massa vehicula eleifend. Curabitur
+                egestas odio fringilla ante rutrum, pellentesque aliquam libero
+                pulvinar. Vestibulum tincidunt ...
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="cattips__article cattips__article_1">
+          <a href="#">
+            <div class="cattips__image-box">
+              <img
+                class="cattips__image"
+                src="i/gallary1.jpg"
+                alt="sleepy cat"
+              />
+            </div>
+          </a>
+          <div class="cattips__text-box">
+            <div class="cattips__link-box">
+              <h2 class="cattips__title">
+                <a class="cattips__title-link" href="#"
+                  >I Will Tell You The Truth About Cat In The Next 60 Seconds</a
+                >
+              </h2>
+            </div>
+            <div class="cattips__link-box cattips__link-box_tags">
+              <a class="cattips__tags" href="#">Cat Care</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cattips__article cattips__article_2">
+          <a href="#">
+            <div class="cattips__image-box">
+              <img
+                class="cattips__image"
+                src="i/gallary2.jpg"
+                alt="walking cat"
+              />
+            </div>
+          </a>
+          <div class="cattips__text-box">
+            <div class="cattips__link-box">
+              <h2 class="cattips__title">
+                <a class="cattips__title-link" href="#">
+                  You Will Never Believe These Bizarre Truths Behind Cat
+                </a>
+              </h2>
+            </div>
+            <div class="cattips__link-box cattips__link-box_tags">
+              <a class="cattips__tags" href="#">Rescue & Adoption</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cattips__article cattips__article_3">
+          <a href="#">
+            <div class="cattips__image-box">
+              <img
+                class="cattips__image"
+                src="i/gallary3.jpg"
+                alt="playfull cat"
+              />
+            </div>
+          </a>
+          <div class="cattips__text-box">
+            <div class="cattips__link-box">
+              <h2 class="cattips__title">
+                <a class="cattips__title-link" href="#"
+                  >Stop Wasting Time And Start Cats
+                </a>
+              </h2>
+            </div>
+            <div class="cattips__link-box cattips__link-box_tags">
+              <a class="cattips__tags" href="#">Cat Care ,</a>
+              <a class="cattips__tags" href="#">Photo & Video</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cattips__article cattips__article_4">
+          <a href="#">
+            <div class="cattips__image-box">
+              <img
+                class="cattips__image"
+                src="i/gallary4.jpg"
+                alt="proud cat"
+              />
+            </div>
+          </a>
+          <div class="cattips__text-box">
+            <div class="cattips__link-box">
+              <h2 class="cattips__title">
+                <a class="cattips__title-link" href="#">
+                  How to Handle Territorial Aggression in Cats
+                </a>
+              </h2>
+            </div>
+            <div class="cattips__link-box cattips__link-box_tags">
+              <a class="cattips__tags" href="#">Cat Care</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cattips__article cattips__article_5">
+          <a href="#">
+            <div class="cattips__image-box">
+              <img
+                class="cattips__image"
+                src="i/gallary5.jpg"
+                alt="sleepy kitten"
+              />
+            </div>
+          </a>
+          <div class="cattips__text-box">
+            <div class="cattips__link-box">
+              <h2 class="cattips__title">
+                <a class="cattips__title-link" href="#">
+                  What to Expect When You’re Expecting Kittens
+                </a>
+              </h2>
+            </div>
+            <div class="cattips__link-box cattips__link-box_tags">
+              <a class="cattips__tags" href="#">Cat Care</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cattips__article cattips__article_6">
+          <a href="#">
+            <div class="cattips__image-box">
+              <img class="cattips__image" src="i/gallary6.jpg" alt="kitten" />
+            </div>
+          </a>
+          <div class="cattips__text-box">
+            <div class="cattips__link-box">
+              <h2 class="cattips__title">
+                <a class="cattips__title-link" href="#">
+                  Adopting and Caring for a Cat with Special Needs
+                </a>
+              </h2>
+            </div>
+            <div class="cattips__link-box cattips__link-box_tags">
+              <a class="cattips__tags" href="#">Rescue & Adoption</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="catadopt">
+        <h2 class="catadopt__title">
+          Start a Story. Adopt! Search to find your new best friend
+        </h2>
+        <p class="catadopt__text">
+          There are likely hundreds of adoptable cats in your local animal
+          shelters or rescues right now who would love to join your family.
+          Helping vulnerable animals and keeping pets in safe and loving homes
+          requires a commitment from all of us. When we work together under a
+          common cause.
+        </p>
+        <div class="catadopt__slider" id="catadopt__slider">
+          <article class="catadopt__image-box">
+            <a
+              class="catadopt__image-link"
+              href="i/Portfolio1.jpg"
+              data-fancybox="gallery"
+              data-caption="Quinn"
+            >
+              <img class="catadopt__image" src="i/Portfolio1.jpg" alt="Kitty" />
+            </a>
+            <div class="catadopt__image-description-box">
+              <div class="catadopt__flex-description">
+                <div>
+                  <a class="catadopt__link" href="#">Cat</a>
+                </div>
+                <h3>
+                  <a class="catadopt__link-big" href="#">Quinn</a>
+                </h3>
+              </div>
+              <svg class="catadopt__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#arrow_right" />
+              </svg>
+            </div>
+          </article>
+
+          <article class="catadopt__image-box">
+            <a
+              class="catadopt__image-link"
+              href="i/Portfolio2.jpg"
+              data-fancybox="gallery"
+              data-caption="Annabelle"
+            >
+              <img class="catadopt__image" src="i/Portfolio2.jpg" alt="Kitty" />
+            </a>
+            <div class="catadopt__image-description-box">
+              <div class="catadopt__flex-description">
+                <div>
+                  <a class="catadopt__link" href="#">Cat</a>
+                </div>
+                <h3>
+                  <a class="catadopt__link-big" href="#">Annabelle</a>
+                </h3>
+              </div>
+              <svg class="catadopt__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#arrow_right" />
+              </svg>
+            </div>
+          </article>
+
+          <article class="catadopt__image-box">
+            <a
+              class="catadopt__image-link"
+              href="i/Portfolio3.jpg"
+              data-fancybox="gallery"
+              data-caption="Delta"
+            >
+              <img class="catadopt__image" src="i/Portfolio3.jpg" alt="Kitty" />
+            </a>
+            <div class="catadopt__image-description-box">
+              <div class="catadopt__flex-description">
+                <div>
+                  <a class="catadopt__link" href="#">Cat</a>
+                </div>
+                <h3>
+                  <a class="catadopt__link-big" href="#">Delta</a>
+                </h3>
+              </div>
+              <svg class="catadopt__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#arrow_right" />
+              </svg>
+            </div>
+          </article>
+          <article class="catadopt__image-box">
+            <a
+              class="catadopt__image-link"
+              href="i/Portfolio4.jpg"
+              data-fancybox="gallery"
+              data-caption="Blake"
+            >
+              <img class="catadopt__image" src="i/Portfolio4.jpg" alt="Dog" />
+            </a>
+            <div class="catadopt__image-description-box">
+              <div class="catadopt__flex-description">
+                <div>
+                  <a class="catadopt__link" href="#">Dog</a>
+                </div>
+                <h3>
+                  <a class="catadopt__link-big" href="#">Blake</a>
+                </h3>
+              </div>
+              <svg class="catadopt__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#arrow_right" />
+              </svg>
+            </div>
+          </article>
+        </div>
+        <div class="catadopt__button-box">
+          <a class="catadopt__button" href="#">Adopt Me</a>
+        </div>
+      </div>
+
+      <div class="catproduct">
+        <h2 class="catproduct__title">Kitty Must-Haves</h2>
+        <a class="catproduct__image-box-main" href="#">
+          <img
+            class="catproduct__image catproduct__image_main"
+            src="i/shop_image.jpg"
+            alt="eating cat"
+          />
+        </a>
+
+        <div class="catproduct__goods" id="catproduct-slider">
+          <div class="catproduct__good">
+            <div class="catproduct__image-box">
+              <p class="catproduct__status">Sale</p>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_front"
+                  src="i/Product1.png"
+                  alt="goods"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_back"
+                  src="i/Product1_back.png"
+                  alt="goods"
+                />
+              </a>
+              <div class="catproduct__quickview-box">
+                <a class="catproduct__quickview-link" href="#">
+                  <svg
+                    class="catproduct__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="i/svg/sprite.svg#eye" />
+                  </svg>
+                  <p class="catproduct__quickview-text">Quickview</p>
+                </a>
+              </div>
+            </div>
+            <h3 class="catproduct__text">
+              <a class="catproduct__text-link" href="#">
+                Simply White Meat Chicken & Whole Oat Meal Recipe Adult Dry Cat
+                Food
+              </a>
+            </h3>
+            <div class="catproduct__tag-box">
+              <a class="catproduct__tag" href="#">Dry Cat Food</a>
+            </div>
+            <div class="catproduct__price-box-total">
+              <div class="catproduct__price-box">
+                <a class="catproduct__price catproduct__price_discount" href="#"
+                  >$20.00</a
+                >
+                <a class="catproduct__price" href="#">$15.00</a>
+              </div>
+              <div class="catproduct__cart-box">
+                <a class="catproduct__cart" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="catproduct__good">
+            <div class="catproduct__image-box">
+              <p class="catproduct__status">Sale</p>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_front"
+                  src="i/Product2.png"
+                  alt="goods"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_back"
+                  src="i/Product2_back.png"
+                  alt="goods"
+                />
+              </a>
+              <div class="catproduct__quickview-box">
+                <a class="catproduct__quickview-link" href="#">
+                  <svg
+                    class="catproduct__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="i/svg/sprite.svg#eye" />
+                  </svg>
+                  <p class="catproduct__quickview-text">Quickview</p>
+                </a>
+              </div>
+            </div>
+            <h3 class="catproduct__text">
+              <a class="catproduct__text-link" href="#">
+                Small Dog White Meat Chicken, Barley & Egg Recipe Adult Dry Dog
+                Food
+              </a>
+            </h3>
+            <div class="catproduct__tag-box">
+              <a class="catproduct__tag" href="#">Dry Dog Food</a>
+            </div>
+            <div class="catproduct__price-box-total">
+              <div class="catproduct__price-box">
+                <a class="catproduct__price" href="#">$90.00</a>
+              </div>
+              <div class="catproduct__cart-box">
+                <a class="catproduct__cart" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="catproduct__good">
+            <div class="catproduct__image-box">
+              <p class="catproduct__status">Sale</p>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_front"
+                  src="i/Product3.png"
+                  alt="goods"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_back"
+                  src="i/Product3_back.png"
+                  alt="goods"
+                />
+              </a>
+              <div class="catproduct__quickview-box">
+                <a class="catproduct__quickview-link" href="#">
+                  <svg
+                    class="catproduct__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="i/svg/sprite.svg#eye" />
+                  </svg>
+                  <p class="catproduct__quickview-text">Quickview</p>
+                </a>
+              </div>
+            </div>
+            <h3 class="catproduct__text">
+              <a class="catproduct__text-link" href="#">
+                Grain Free Beef & Egg Recipe Adult Dry Dog Food
+              </a>
+            </h3>
+            <div class="catproduct__tag-box">
+              <a class="catproduct__tag" href="#">Dry Dog Food</a>
+            </div>
+            <div class="catproduct__price-box-total">
+              <div class="catproduct__price-box">
+                <a class="catproduct__price catproduct__price_discount" href="#"
+                  >$18.00</a
+                >
+                <a class="catproduct__price" href="#">$16.00</a>
+              </div>
+              <div class="catproduct__cart-box">
+                <a class="catproduct__cart" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="catproduct__good">
+            <div class="catproduct__image-box">
+              <p class="catproduct__status">Sale</p>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_front"
+                  src="i/Product4.png"
+                  alt="goods"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_back"
+                  src="i/Product4_back.png"
+                  alt="goods"
+                />
+              </a>
+              <div class="catproduct__quickview-box">
+                <a class="catproduct__quickview-link" href="#">
+                  <svg
+                    class="catproduct__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="i/svg/sprite.svg#eye" />
+                  </svg>
+                  <p class="catproduct__quickview-text">Quickview</p>
+                </a>
+              </div>
+            </div>
+            <h3 class="catproduct__text">
+              <a class="catproduct__text-link" href="#">
+                Grain Free White Meat Chicken & Egg Recipe Adult Dry Dog Food
+              </a>
+            </h3>
+            <div class="catproduct__tag-box">
+              <a class="catproduct__tag" href="#">Dry Dog Food</a>
+            </div>
+            <div class="catproduct__price-box-total">
+              <div class="catproduct__price-box">
+                <a class="catproduct__price catproduct__price_discount" href="#"
+                  >$45.00</a
+                >
+                <a class="catproduct__price" href="#">$35.00</a>
+              </div>
+              <div class="catproduct__cart-box">
+                <a class="catproduct__cart" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="catproduct__good">
+            <div class="catproduct__image-box">
+              <p class="catproduct__status">Sale</p>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_front"
+                  src="i/Product5.png"
+                  alt="goods"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_back"
+                  src="i/Product5_back.png"
+                  alt="goods"
+                />
+              </a>
+              <div class="catproduct__quickview-box">
+                <a class="catproduct__quickview-link" href="#">
+                  <svg
+                    class="catproduct__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="i/svg/sprite.svg#eye" />
+                  </svg>
+                  <p class="catproduct__quickview-text">Quickview</p>
+                </a>
+              </div>
+            </div>
+            <h3 class="catproduct__text">
+              <a class="catproduct__text-link" href="#">
+                Simply Salmon & Whole Brown Rice Recipe Adult Dry Cat Food
+              </a>
+            </h3>
+            <div class="catproduct__tag-box">
+              <a class="catproduct__tag" href="#">Dry Cat Food</a>
+            </div>
+            <div class="catproduct__price-box-total">
+              <div class="catproduct__price-box">
+                <a class="catproduct__price catproduct__price_discount" href="#"
+                  >$45.00</a
+                >
+                <a class="catproduct__price" href="#">$40.00</a>
+              </div>
+              <div class="catproduct__cart-box">
+                <a class="catproduct__cart" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="catproduct__good">
+            <div class="catproduct__image-box">
+              <p class="catproduct__status">Sale</p>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_front"
+                  src="i/Product6.png"
+                  alt="goods"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="catproduct__image catproduct__image_back"
+                  src="i/Product6_back.png"
+                  alt="goods"
+                />
+              </a>
+              <div class="catproduct__quickview-box">
+                <a class="catproduct__quickview-link" href="#">
+                  <svg
+                    class="catproduct__svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="i/svg/sprite.svg#eye" />
+                  </svg>
+                  <p class="catproduct__quickview-text">Quickview</p>
+                </a>
+              </div>
+            </div>
+            <h3 class="catproduct__text">
+              <a class="catproduct__text-link" href="#">
+                Simply 9 Ranch-Raised Lamb & Whole Barley Recipe Adult Dry Dog
+                Food
+              </a>
+            </h3>
+            <div class="catproduct__tag-box">
+              <a class="catproduct__tag" href="#">Dry Cat Food</a>
+            </div>
+            <div class="catproduct__price-box-total">
+              <div class="catproduct__price-box">
+                <a class="catproduct__price catproduct__price_discount" href="#"
+                  >$30.00</a
+                >
+                <a class="catproduct__price" href="#">$20.00</a>
+              </div>
+              <div class="catproduct__cart-box">
+                <a class="catproduct__cart" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map">
+        <h2 class="map__title">Cat's map</h2>
+        <div id="map" class="map__item"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="pre-footer">
+        <div class="pre-footer__form-box">
+          <h2 class="pre-footer__title">Sign up for newsletter</h2>
+          <form action="#" class="pre-footer__form" method="post">
+            <input
+              class="pre-footer__email"
+              type="email"
+              placeholder="yourmail@example.com"
+              name="email"
+            />
+            <input class="pre-footer__submit" type="submit" value="Subscribe" />
+          </form>
+        </div>
+        <a href="#" class="pre-footer__image-box">
+          <img
+            class="pre-footer__image"
+            src="i/footer_form.png"
+            alt="animals"
+          />
+        </a>
+      </div>
+
+      <div class="footer-main">
+        <section class="footer-info">
+          <div>
+            <a class="footer-info__image-box" href="#">
+              <img
+                class="footer-info__image"
+                src="i/logo_white.png"
+                alt="logo-white"
+            /></a>
+          </div>
+          <p class="footer-info__text">
+            Pabu will create your website that is designed perfectly for animal
+            lovers. Whether you want to build a website for pet adoption, pet
+            shop, vet clinic, or other pet service.
+          </p>
+
+          <div class="footer-info__svg-box">
+            <a class="footer-info__svg-link" href="#">
+              <svg class="footer-info__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#facebook" /></svg
+            ></a>
+            <a class="footer-info__svg-link" href="#">
+              <svg class="footer-info__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#twitter" /></svg
+            ></a>
+            <a class="footer-info__svg-link" href="#">
+              <svg class="footer-info__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#instagram" /></svg
+            ></a>
+            <a class="footer-info__svg-link" href="#">
+              <svg class="footer-info__svg" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="i/svg/sprite.svg#tik-tok" /></svg
+            ></a>
+          </div>
+        </section>
+
+        <section class="footer-posts">
+          <h2 class="footer-posts__title">Recent Posts</h2>
+          <div class="footer-posts__block">
+            <img
+              class="footer-posts__image"
+              src="i/footer_post1.jpg"
+              alt="adopt a cat"
+            />
+            <h3 class="footer-posts__block-title-box">
+              <a class="footer-posts__block-title" href="#">
+                Adopting and Caring for a Cat with Special Needs
+              </a>
+            </h3>
+            <div class="footer-posts__block-date-box">
+              <a class="footer-posts__block-date" href="#">January 24, 2022</a>
+            </div>
+          </div>
+          <div class="footer-posts__block">
+            <img
+              class="footer-posts__image"
+              src="i/footer_post2.jpg"
+              alt="adopt a cat"
+            />
+            <h3 class="footer-posts__block-title-box">
+              <a class="footer-posts__block-title" href="#">
+                What to Expect When You’re Expecting Kittens
+              </a>
+            </h3>
+            <div class="footer-posts__block-date-box">
+              <a class="footer-posts__block-date" href="#">January 24, 2022</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-instagram">
+          <h2 class="footer-instagram__title">Instagram</h2>
+          <a class="footer-instagram__link" href="">
+            <div class="footer-instagram__image-box">
+              <picture class="footer-instagram__picture">
+                <source
+                  media="(min-width:992px)"
+                  srcset="i/Instagram1_small.jpg"
+                />
+                <img
+                  class="footer-instagram__picture"
+                  src="i/Instagram1_full.jpg"
+                  alt="dog"
+                />
+              </picture></div
+          ></a>
+          <a class="footer-instagram__link" href="">
+            <div class="footer-instagram__image-box">
+              <picture class="footer-instagram__picture">
+                <source
+                  media="(min-width:992px)"
+                  srcset="i/Instagram2_small.jpg"
+                />
+                <img
+                  class="footer-instagram__picture"
+                  src="i/Instagram2_full.jpg"
+                  alt="cat"
+                />
+              </picture></div
+          ></a>
+          <a class="footer-instagram__link" href="">
+            <div class="footer-instagram__image-box">
+              <picture class="footer-instagram__picture">
+                <source
+                  media="(min-width:992px)"
+                  srcset="i/Instagram3_small.jpg"
+                />
+                <img
+                  class="footer-instagram__picture"
+                  src="i/Instagram3_full.jpg"
+                  alt="hagging dog"
+                />
+              </picture></div
+          ></a>
+          <a class="footer-instagram__link" href="">
+            <div class="footer-instagram__image-box">
+              <picture class="footer-instagram__picture">
+                <source
+                  media="(min-width:992px)"
+                  srcset="i/Instagram4_small.jpg"
+                />
+                <img
+                  class="footer-instagram__picture"
+                  src="i/Instagram4_full.jpg"
+                  alt="clever dog"
+                />
+              </picture></div
+          ></a>
+          <a class="footer-instagram__link" href="">
+            <div class="footer-instagram__image-box">
+              <picture class="footer-instagram__picture">
+                <source
+                  media="(min-width:992px)"
+                  srcset="i/Instagram5_small.jpg"
+                />
+                <img
+                  class="footer-instagram__picture"
+                  src="i/Instagram5_full.jpg"
+                  alt="travelling dog"
+                />
+              </picture></div
+          ></a>
+          <a class="footer-instagram__link" href="">
+            <div class="footer-instagram__image-box">
+              <picture class="footer-instagram__picture">
+                <source
+                  media="(min-width:992px)"
+                  srcset="i/Instagram6_small.jpg"
+                />
+                <img
+                  class="footer-instagram__picture"
+                  src="i/Instagram6_full.jpg"
+                  alt="dog pair"
+                />
+              </picture></div
+          ></a>
+        </section>
+      </div>
+
+      <div class="footer-end">
+        <nav class="footer-end__nav">
+          <ul>
+            <li class="footer-end__link-box">
+              <a class="footer-end__link" href="#">Join Us</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="footer-end__link-box">
+              <a class="footer-end__link" href="#">Blog</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="footer-end__link-box">
+              <a class="footer-end__link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="footer-end__link-box">
+              <a class="footer-end__link" href="#">About Us</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="footer-end__text">
+          ©2022 Pabu - Animals and Pets WordPress Theme
+        </p>
+      </div>
+      <div class="scroll-up">
+        <a class="scroll-up__svg-box" href="#header">
+          <svg class="scroll-up__svg" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="i/svg/sprite.svg#arrow_up" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/fec771e70b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

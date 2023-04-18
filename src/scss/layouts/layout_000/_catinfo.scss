@@ -1,0 +1,80 @@
+.catinfo {
+  background: url(#{$i}BG_now-you-can.jpg) no-repeat 80% 0%;
+  padding: 40px 10px 20px;
+  display: grid;
+
+  @include e(image-box) {
+    margin-bottom: 70px;
+    order: -1;
+  }
+
+  @include e(image) {
+    @include image();
+  }
+
+  @include e(learn) {
+    margin-bottom: 100px;
+  }
+
+  @include e(title) {
+    font-size: rem(32px);
+    font-weight: $baseFontWeight;
+    color: $white;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+
+  @include e(text) {
+    color: $white;
+    line-height: 1.75;
+    font-family: $FontFamilySource;
+    font-weight: 400;
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include e(link) {
+    font-weight: $baseFontWeight;
+    color: $white;
+    display: inline-block;
+    padding: 20px 70px;
+    background-color: $colorButtonBackground;
+    letter-spacing: 1px;
+    border-radius: 5px;
+  }
+
+  @include e(tips) {
+    text-align: center;
+    margin-bottom: 120px;
+  }
+
+  @include e(number) {
+    font-size: rem(68px);
+    font-weight: $baseFontWeight;
+    color: $colorNumbers;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  @include e(title-bottom) {
+    font-size: rem(32px);
+    font-weight: $baseFontWeight;
+    color: $colorText;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  @include e(text-bottom) {
+    font-family: $FontFamilySource;
+    font-weight: 400;
+    color: $colorMenuText;
+    line-height: 1.75;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+  }
+}

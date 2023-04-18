@@ -1,0 +1,130 @@
+.footer-main {
+  background: url(#{$i}footer_bg_brown-brush_bottom.png) no-repeat;
+  background-color: $colorBlack;
+  padding: 100px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+
+  @include e(image-box) {
+    display: inline-block;
+  }
+
+  @include e(image) {
+    @include image();
+  }
+
+  @include e(text) {
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+    color: $colorFooterText;
+    line-height: 1.75;
+    letter-spacing: 0;
+  }
+
+  @include e(svg-box) {
+    display: flex;
+    gap: 8px;
+  }
+
+  @include e(svg) {
+    width: 20px;
+    height: 20px;
+    --fill-color: #ffffff;
+  }
+}
+
+.footer-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 90px;
+
+  @include e(title) {
+    color: $white;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    font-size: rem(17.5px);
+    line-height: 1.25;
+    letter-spacing: 1px;
+  }
+
+  @include e(block) {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    column-gap: 15px;
+    row-gap: 10px;
+    align-items: center;
+  }
+
+  @include e(image) {
+    @include image();
+    height: 80px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  @include e(block-title-box) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  @include e(block-title) {
+    color: $white;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    font-size: rem(17.5px);
+    line-height: 1.25;
+    letter-spacing: 1px;
+  }
+
+  @include e(block-date-box) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  @include e(block-date) {
+    color: $colorFooterText;
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(14px);
+    line-height: 1.75;
+    letter-spacing: 0;
+  }
+}
+
+.footer-instagram {
+  display: grid;
+  gap: 10px;
+
+  @include e(title) {
+    color: $white;
+    font-size: rem(17.5px);
+    line-height: 1.25;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    margin-bottom: 20px;
+  }
+
+  @include e(image-box) {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+  }
+
+  @include e(picture) {
+    @include image() {
+      position: absolute;
+      top: 0;
+    }
+  }
+}

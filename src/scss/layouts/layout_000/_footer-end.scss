@@ -1,0 +1,59 @@
+.footer-end {
+  background-color: $colorBlack;
+  padding: 20px 10px 70px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include e(nav) {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  @include e(link) {
+    color: $white;
+    line-height: 1.75;
+    letter-spacing: 0;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @include e(text) {
+    color: $white;
+    line-height: 1.75;
+    letter-spacing: 0;
+    font-family: $FontFamilySource;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.scroll-up {
+  @include e(svg-box) {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #816741;
+    z-index: 9999;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include e(svg) {
+    --fill-color: #ffffff;
+    --stroke-color: #ffffff;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.scroll-up.close {
+  display: none;
+}

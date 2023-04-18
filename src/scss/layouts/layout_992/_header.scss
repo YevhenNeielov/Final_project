@@ -1,0 +1,203 @@
+.header {
+  padding: 20px 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom-color: rgba(6, 6, 6, 0.2);
+  background-color: transparent;
+
+  @include e(svg-box) {
+    display: flex;
+    flex-direction: row;
+    order: 0;
+  }
+
+  @include e(svg) {
+    width: 24px;
+    height: 24px;
+    margin-right: 30px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @include m(cart) {
+      display: initial;
+    }
+
+    @include m(menu-desktop) {
+      display: initial;
+    }
+  }
+
+  @include e(image-box) {
+    width: 100px;
+    height: 60px;
+  }
+
+  @include e(image) {
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.dark-overlay {
+  display: none;
+}
+.mobile-button {
+  display: none;
+}
+
+.menu {
+  display: block;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu > ul > li {
+  display: inline-block;
+}
+
+.menu > ul > li > a {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.menu li ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 151%;
+  left: 0;
+  padding: 1.5rem;
+  background: $white;
+  transition: all 200ms ease;
+  z-index: 10000;
+  border-radius: 5px;
+  display: grid;
+  gap: 20px;
+}
+
+.menu li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu li .grid-pages {
+  transition-delay: 200ms;
+  left: -475%;
+  grid-template-columns: repeat(3, 25%);
+  width: 960px;
+  background-image: url(#{$i}menu_bg1.jpg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.col-main {
+  margin-bottom: 10px;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.col-1 {
+  grid-column: 1 / 2;
+}
+
+.col-2 {
+  grid-column: 2 / 3;
+}
+
+.col-3 {
+  grid-column: 3 / 4;
+}
+
+.row-0 {
+  grid-row: 1;
+}
+
+.row-1 {
+  grid-row: 2;
+}
+
+.row-2 {
+  grid-row: 3;
+}
+
+.row-3 {
+  grid-row: 4;
+}
+
+.row-4 {
+  grid-row: 5;
+}
+
+.row-5 {
+  grid-row: 6;
+}
+
+.row-6 {
+  grid-row: 7;
+}
+
+.menu li .grid-shop {
+  transition-delay: 200ms;
+  left: -500%;
+  grid-template-columns: repeat(2, 30%);
+  width: 790px;
+  background-image: url(#{$i}menu_bg2.jpg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.menu li .grid-blog {
+  transition-delay: 200ms;
+  width: 270px;
+}
+
+.menu li .col-main a {
+  font-family: $FontFamilySignika;
+  font-style: normal;
+  font-weight: $baseFontWeight;
+  color: $colorButton;
+  padding: 0.5rem;
+}
+
+.menu li ul a:not([class="a-main"]) {
+  display: block;
+  padding: 0.5rem;
+  font-family: $FontFamilySource;
+  font-style: normal;
+  font-weight: 400;
+  color: $colorHeaderText;
+  transition: 0.5s;
+
+  &:hover {
+    color: $colorButton;
+    transform: translateX(15px);
+  }
+}
+
+.fixed {
+  position: fixed;
+  background-color: $white;
+  top: -100%;
+}
+
+.fixed-go {
+  top: 0;
+}
