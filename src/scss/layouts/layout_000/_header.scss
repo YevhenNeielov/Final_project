@@ -5,9 +5,8 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px $colorFooterText solid;
-  z-index: 1;
   background-color: $white;
-  z-index: 10000;
+  z-index: 1001;
 
   @include e(title) {
     display: none;

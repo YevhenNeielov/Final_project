@@ -10,27 +10,16 @@ $("#main-slider").slick({
 });
 
 $(`#main-slider`).on(`beforeChange`, function () {
-  $(`.main-slider__text_title, .main-slider__text_content`).attr(
-    "style",
-    "top: 400px; opacity: 0"
+  $(`.main-slider__text_title`).toggleClass(`main-slider__text_title-active`);
+  $(`.main-slider__text_question`).toggleClass(
+    `main-slider__text_question-active`
   );
-  $(`.main-slider__text_question`).attr("style", "top: -100px; opacity: 0");
-  $(`.main-slider__link`).attr("style", "opacity: 0");
-
-  $(`.main-slider__text_title`).animate({
-    opacity: 1,
-    top: 0,
-    transition: `1.3s`,
-  });
-  $(`.main-slider__text_question, .main-slider__text_content`).animate({
-    opacity: 1,
-    top: 0,
-    transition: `1s`,
-  });
-  $(`.main-slider__link`).animate({
-    opacity: 1,
-    transition: `0.3s`,
-  });
+  $(`.main-slider__text_content`).toggleClass(
+    `main-slider__text_content-active`
+  );
+  $(`.main-slider__link`).toggleClass(`main-slider__link_active`);
+  $(`.main-slider__google-box`).toggleClass(`main-slider__google-box_active`);
+  $(`.main-slider__bubble-box`).toggleClass(`main-slider__bubble-box_active`);
 });
 
 $("#catadopt__slider").slick({

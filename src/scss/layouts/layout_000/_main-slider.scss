@@ -22,6 +22,8 @@
     grid-template-columns: auto minmax(auto, 1200px) auto;
     justify-items: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
   }
 
   @include e(text-block) {
@@ -45,19 +47,28 @@
       font-weight: $baseFontWeight;
       color: $colorButton;
       font-size: clamp(11px, 2.1vw, 18px);
+    }
+
+    @include m(question-active) {
       animation: textAnimateFromUp 1s ease;
     }
 
     @include m(title) {
       font-weight: 700;
       font-size: clamp(24px, 6vw, 72px);
-      animation: textAnimateFromDown 1.3s ease;
+    }
+
+    @include m(title-active) {
+      animation: textAnimateFromDown 1s ease;
     }
 
     @include m(content) {
       font-size: clamp(11px, 2.1vw, 16px);
       font-family: $FontFamilyLato;
       font-weight: 400;
+    }
+
+    @include m(content-active) {
       animation: textAnimateFromDown 1s ease;
     }
   }
@@ -68,38 +79,99 @@
     font-weight: 700;
     width: 150px;
     padding: 10px 0;
-    animation: textAnimateOpacity 1s ease;
+
+    @include m(active) {
+      animation: textAnimateOpacity 1s ease;
+    }
+  }
+
+  @include e(bubble-box) {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 160px);
+    opacity: 1;
+
+    @include m(active) {
+      animation: imageAnimate 0.7s ease;
+    }
+  }
+
+  @include e(google-box) {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: 18%;
+    left: calc(50% + 197px);
+    opacity: 1;
+
+    @include m(active) {
+      animation: imageAnimate 2s ease;
+    }
+  }
+
+  @include e(kriwil-box) {
+    width: 100%;
+    height: 1200px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -75%;
+  }
+
+  @include e(image) {
+    @include image();
   }
 }
 
 @keyframes textAnimateFromDown {
-  from {
+  0% {
     transform: translateY(400px);
     opacity: 0;
   }
-  to {
+  100% {
     transform: none;
     opacity: 1;
   }
 }
 
 @keyframes textAnimateFromUp {
-  from {
+  0% {
     transform: translateY(-100px);
     opacity: 0;
   }
-  to {
+  100% {
     transform: none;
     opacity: 1;
   }
 }
 
 @keyframes textAnimateOpacity {
-  from {
+  0% {
     scale: 0.9;
     opacity: 0;
   }
-  to {
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes imageAnimate {
+  0% {
+    scale: 0.7;
+    opacity: 0;
+  }
+  50% {
+    scale: 0.7;
+    opacity: 0;
+  }
+  90% {
+    scale: 1.1;
+    opacity: 1;
+  }
+  100% {
     scale: 1;
     opacity: 1;
   }

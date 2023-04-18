@@ -1,0 +1,7 @@
+.main-slider {
+  @include e(bubble-box) {
+    width: 250px;
+    top: 8%;
+    left: calc(50% - 300px);
+  }
+}

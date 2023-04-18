@@ -3,6 +3,11 @@
     justify-items: start;
   }
 
+  @include e(bubble-box) {
+    width: 300px;
+    top: 2%;
+  }
+
   @include e(text-block) {
     text-align: initial;
     align-items: initial;
