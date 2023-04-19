@@ -8,6 +8,12 @@
     top: 2%;
   }
 
+  @include e(bubble-box-second) {
+    width: 250px;
+    top: 6%;
+    left: 50%;
+  }
+
   @include e(text-block) {
     text-align: initial;
     align-items: initial;

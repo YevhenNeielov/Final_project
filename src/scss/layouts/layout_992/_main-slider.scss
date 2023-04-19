@@ -1,4 +1,10 @@
 .main-slider {
+  @include e(bubble-box-second) {
+    width: 300px;
+    top: 0;
+    left: calc(50% + 200px);
+  }
+
   @include e(arrows) {
     display: initial;
   }

@@ -4,4 +4,8 @@
     top: 5%;
     left: calc(50% - 675px);
   }
+
+  @include e(bubble-box-second) {
+    left: calc(50% + 300px);
+  }
 }

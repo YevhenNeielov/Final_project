@@ -94,7 +94,20 @@
     opacity: 1;
 
     @include m(active) {
-      animation: imageAnimate 0.7s ease;
+      animation: imageAnimate 1s ease;
+    }
+  }
+
+  @include e(bubble-box-second) {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 160px);
+    transform: rotate(0) translateX(0);
+
+    @include m(active) {
+      animation: imageAnimateSecond 2s ease;
     }
   }
 
@@ -174,5 +187,17 @@
   100% {
     scale: 1;
     opacity: 1;
+  }
+}
+
+@keyframes imageAnimateSecond {
+  0% {
+    transform: rotate(90deg) translateX(85vh);
+  }
+  20% {
+    transform: rotate(90deg) translateX(85vh);
+  }
+  100% {
+    transform: rotate(0) translateX(0);
   }
 }

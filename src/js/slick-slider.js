@@ -3,7 +3,7 @@ $("#main-slider").slick({
   autoplay: true,
   fade: true,
   speed: 1000,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 500000,
   appendArrows: ".main-slider__arrows",
   prevArrow: `<span class="main-slider__arrow main-slider__arrow_prev"><i class="fa-solid fa-angle-left"></i></span>`,
   nextArrow: `<span class="main-slider__arrow main-slider__arrow_next"><i class="fa-solid fa-angle-left"></i></span>`,
@@ -20,6 +20,9 @@ $(`#main-slider`).on(`beforeChange`, function () {
   $(`.main-slider__link`).toggleClass(`main-slider__link_active`);
   $(`.main-slider__google-box`).toggleClass(`main-slider__google-box_active`);
   $(`.main-slider__bubble-box`).toggleClass(`main-slider__bubble-box_active`);
+  $(`.main-slider__bubble-box-second`).toggleClass(
+    `main-slider__bubble-box-second_active`
+  );
 });
 
 $("#catadopt__slider").slick({

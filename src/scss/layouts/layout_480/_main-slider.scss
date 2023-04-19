@@ -1,0 +1,6 @@
+.main-slider {
+  @include e(bubble-box-second) {
+    top: 10%;
+    left: calc(50% - 170px);
+  }
+}
