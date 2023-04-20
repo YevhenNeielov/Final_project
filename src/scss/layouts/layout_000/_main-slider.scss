@@ -24,6 +24,7 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+    transition: 0.3s;
   }
 
   @include e(text-block) {
@@ -92,6 +93,7 @@
     top: 15%;
     left: calc(50% - 160px);
     opacity: 1;
+    transition: 0.3s;
 
     @include m(active) {
       animation: imageAnimate 1s ease;
@@ -105,6 +107,7 @@
     top: 15%;
     left: calc(50% - 160px);
     transform: rotate(0) translateX(0);
+    transition: 0.3s;
 
     @include m(active) {
       animation: imageAnimateSecond 2s ease;

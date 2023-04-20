@@ -1,22 +1,36 @@
 //main-slider movement
 
 $(window).mousemove(function (e) {
-  const mainCatHeader = $(".header");
-  let catCoords = $(".main-slider__text");
-  let catCoords1 = $(".main-slider__box");
+  let catMoveCoords = $(".main-slider__box");
+  let catBubbleCoords = $(
+    ".main-slider__bubble-box, .main-slider__bubble-box-second"
+  );
 
-  if (e.target == mainCatHeader) {
-    catCoords1.css({
+  if (
+    $(e.target).is(
+      "header, header *, .main-slider__arrow, .main-slider__arrow *"
+    ) ||
+    $(".catinfo").offset().top < e.clientY + $(document).scrollTop() + 30
+  ) {
+    catMoveCoords.css({
+      marginLeft: "0px",
+      marginTop: "0px",
+    });
+    catBubbleCoords.css({
       marginLeft: "0px",
       marginTop: "0px",
     });
     return;
   }
-  let x = e.clientX - catCoords.offset().left;
-  let y = e.clientY - catCoords.offset().top;
-  catCoords1.css({
-    marginLeft: -x / 25 + "px",
-    marginTop: -y / 20 + "px",
+  let x = e.clientX - $(window).width() / 2;
+  let y = e.clientY - $(window).height() / 2;
+  catMoveCoords.css({
+    marginLeft: -x / 10 + "px",
+    marginTop: -y / 10 + "px",
+  });
+  catBubbleCoords.css({
+    marginLeft: -x / 7 + "px",
+    marginTop: -y / 7 + "px",
   });
 });
 
