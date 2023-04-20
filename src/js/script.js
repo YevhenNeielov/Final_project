@@ -1,3 +1,25 @@
+//main-slider movement
+
+$(window).mousemove(function (e) {
+  const mainCatHeader = $(".header");
+  let catCoords = $(".main-slider__text");
+  let catCoords1 = $(".main-slider__box");
+
+  if (e.target == mainCatHeader) {
+    catCoords1.css({
+      marginLeft: "0px",
+      marginTop: "0px",
+    });
+    return;
+  }
+  let x = e.clientX - catCoords.offset().left;
+  let y = e.clientY - catCoords.offset().top;
+  catCoords1.css({
+    marginLeft: -x / 25 + "px",
+    marginTop: -y / 20 + "px",
+  });
+});
+
 //fixed header + post
 $(window).scroll(function () {
   const header = $(".header");
@@ -15,7 +37,6 @@ $(window).scroll(function () {
     window.innerWidth > 1200
       ? catFixedEnd.top + window.pageYOffset + 20
       : catFixedEnd.top + window.pageYOffset - 140;
-  console.log(scrollTop);
   scrollTop > 500 && header.addClass("fixed");
   scrollTop < 500 && header.removeClass("fixed");
   scrollTop > 940 && header.addClass("fixed-go");
@@ -80,12 +101,9 @@ let scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 // smm
-function initTablet() {
-  console.log("is-tablet");
-}
+function initTablet() {}
 
 function initDesktop() {
-  console.log("is-desktop");
   resetMobileMenu();
 }
 
