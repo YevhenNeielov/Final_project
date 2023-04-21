@@ -7,6 +7,7 @@
   border-bottom: 1px $colorFooterText solid;
   background-color: $white;
   z-index: 1001;
+  position: relative;
 
   @include e(title) {
     display: none;
@@ -153,4 +154,27 @@
 
 .fixed-go {
   top: 0;
+}
+
+.moving-line {
+  position: absolute;
+  background-color: $colorButton;
+  width: 100%;
+  height: 5px;
+  left: -100%;
+  bottom: -5px;
+}
+
+.moving {
+  animation: movingLine 5s linear, movingLine 6s linear 5s infinite;
+}
+
+@keyframes movingLine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0;
+  }
 }

@@ -34,7 +34,7 @@
 .scroll-up {
   @include e(svg-box) {
     position: fixed;
-    bottom: 30px;
+    bottom: -100%;
     right: 30px;
     width: 40px;
     height: 40px;

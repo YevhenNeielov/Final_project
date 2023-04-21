@@ -2,6 +2,7 @@ $("#main-slider").slick({
   arrows: true,
   autoplay: true,
   fade: true,
+  pauseOnHover: false,
   speed: 1000,
   autoplaySpeed: 5000,
   appendArrows: ".main-slider__arrows",
@@ -23,6 +24,7 @@ $(`#main-slider`).on(`beforeChange`, function () {
   $(`.main-slider__bubble-box-second`).toggleClass(
     `main-slider__bubble-box-second_active`
   );
+  // $(`.moving-line`).css(`left`, `0`);
 });
 
 $("#catadopt__slider").slick({
