@@ -10,7 +10,7 @@ $(window).mousemove(function (e) {
     $(e.target).is(
       "header, header *, .main-slider__arrow, .main-slider__arrow *"
     ) ||
-    $(".catinfo").offset().top < e.clientY + $(document).scrollTop() + 30
+    $(".catinfo").offset().top < e.clientY + $(document).scrollTop() + 20
   ) {
     catMoveCoords.css({
       marginLeft: "0px",
@@ -34,27 +34,25 @@ $(window).mousemove(function (e) {
   });
 });
 
-//fixed header + post
+//fixed header + scrollUp + post
 $(window).scroll(function () {
   const header = $(".header");
   const catPost = $(".cattips__fixed");
+  const scrollUp = $(".scroll-up__svg-box");
   let scrollTop = $(document).scrollTop();
-  let catFixedStart = document
-    .querySelector(".cattips__article_1")
-    .getBoundingClientRect();
-  let catFixedStartLength = catFixedStart.top + window.pageYOffset - 81;
-  let catFixedEnd =
-    window.innerWidth > 1200
-      ? document.querySelector(".cattips__article_3").getBoundingClientRect()
-      : document.querySelector(".cattips__article_6").getBoundingClientRect();
+  let catFixedStartLength = $(".cattips__article_1").offset().top - 81;
   let catFixedEndLength =
-    window.innerWidth > 1200
-      ? catFixedEnd.top + window.pageYOffset + 20
-      : catFixedEnd.top + window.pageYOffset - 140;
+    $(window).width() > 1200
+      ? $(".cattips__article_3").offset().top + 20
+      : $(".cattips__article_6").offset().top - 140;
   scrollTop > 500 && header.addClass("fixed");
   scrollTop < 500 && header.removeClass("fixed");
-  scrollTop > 940 && header.addClass("fixed-go");
-  scrollTop < 940 && header.removeClass("fixed-go");
+  scrollTop > 940 &&
+    header.addClass("fixed-go") &&
+    scrollUp.css("bottom", "30px");
+  scrollTop < 940 &&
+    header.removeClass("fixed-go") &&
+    scrollUp.css("bottom", "-100%");
 
   scrollTop < catFixedStartLength && catPost.removeClass("fixedpost");
   scrollTop > catFixedStartLength && catPost.addClass("fixedpost");
