@@ -80,6 +80,8 @@
     font-weight: 700;
     width: 150px;
     padding: 10px 0;
+    position: relative;
+    z-index: 1;
 
     @include m(active) {
       animation: textAnimateOpacity 1s ease;

@@ -1,38 +1,42 @@
 //main-slider movement
+(function sliderMovement() {
+  $(window).mousemove(function (e) {
+    if ($(window).width() < 992) {
+      return;
+    }
+    let catMoveCoords = $(".main-slider__box");
+    let catBubbleCoords = $(
+      ".main-slider__bubble-box, .main-slider__bubble-box-second"
+    );
 
-$(window).mousemove(function (e) {
-  let catMoveCoords = $(".main-slider__box");
-  let catBubbleCoords = $(
-    ".main-slider__bubble-box, .main-slider__bubble-box-second"
-  );
-
-  if (
-    $(e.target).is(
-      "header, header *, .main-slider__arrow, .main-slider__arrow *"
-    ) ||
-    $(".catinfo").offset().top < e.clientY + $(document).scrollTop() + 20
-  ) {
+    if (
+      $(e.target).is(
+        "header, header *, .main-slider__arrow, .main-slider__arrow *"
+      ) ||
+      $(".catinfo").offset().top < e.clientY + $(document).scrollTop() + 20
+    ) {
+      catMoveCoords.css({
+        marginLeft: "0px",
+        marginTop: "0px",
+      });
+      catBubbleCoords.css({
+        marginLeft: "0px",
+        marginTop: "0px",
+      });
+      return;
+    }
+    let x = e.clientX - $(window).width() / 2;
+    let y = e.clientY - $(window).height() / 2;
     catMoveCoords.css({
-      marginLeft: "0px",
-      marginTop: "0px",
+      marginLeft: -x / 10 + "px",
+      marginTop: -y / 10 + "px",
     });
     catBubbleCoords.css({
-      marginLeft: "0px",
-      marginTop: "0px",
+      marginLeft: -x / 7 + "px",
+      marginTop: -y / 7 + "px",
     });
-    return;
-  }
-  let x = e.clientX - $(window).width() / 2;
-  let y = e.clientY - $(window).height() / 2;
-  catMoveCoords.css({
-    marginLeft: -x / 10 + "px",
-    marginTop: -y / 10 + "px",
   });
-  catBubbleCoords.css({
-    marginLeft: -x / 7 + "px",
-    marginTop: -y / 7 + "px",
-  });
-});
+})();
 
 //fixed header + scrollUp + post
 $(window).scroll(function () {
@@ -113,7 +117,7 @@ let scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 // smm
-function initTablet() {}
+function initMobile() {}
 
 function initDesktop() {
   resetMobileMenu();
@@ -121,10 +125,10 @@ function initDesktop() {
 
 ssm.addStates([
   {
-    id: "tablet",
+    id: "mobile",
     query: "(max-width: 992px)",
     onEnter: function () {
-      initTablet();
+      initMobile();
     },
   },
   {
