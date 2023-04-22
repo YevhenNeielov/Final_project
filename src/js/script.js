@@ -49,8 +49,12 @@ $(window).scroll(function () {
     $(window).width() > 1200
       ? $(".cattips__article_3").offset().top + 20
       : $(".cattips__article_6").offset().top - 140;
-  scrollTop > 500 && header.addClass("fixed");
-  scrollTop < 500 && header.removeClass("fixed");
+  scrollTop > 500 &&
+    header.addClass("fixed") &&
+    $(".moving-line").addClass("no-moving-line");
+  scrollTop < 500 &&
+    header.removeClass("fixed") &&
+    $(".moving-line").removeClass("no-moving-line");
   scrollTop > 940 &&
     header.addClass("fixed-go") &&
     scrollUp.css("bottom", "30px");
