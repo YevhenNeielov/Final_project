@@ -24,7 +24,11 @@ $(`#main-slider`).on(`beforeChange`, function () {
   $(`.main-slider__bubble-box-second`).toggleClass(
     `main-slider__bubble-box-second_active`
   );
-  // $(`.moving-line`).css(`left`, `0`);
+  $(`.moving-line`).css(`animation`, `none`);
+});
+
+$(`#main-slider`).on(`afterChange`, function () {
+  $(`.moving-line`).css(`animation`, `movingLine 5s linear infinite`);
 });
 
 $("#catadopt__slider").slick({

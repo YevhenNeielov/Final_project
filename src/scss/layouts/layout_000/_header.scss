@@ -163,10 +163,7 @@
   height: 5px;
   left: -100%;
   bottom: -5px;
-}
-
-.moving {
-  animation: movingLine 5s linear, movingLine 6s linear 5s infinite;
+  animation: movingLine 5s linear;
 }
 
 @keyframes movingLine {
