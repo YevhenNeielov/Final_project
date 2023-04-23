@@ -1,0 +1,6 @@
+.pre-footer {
+  @include e(cat-spinner) {
+    max-width: 400px;
+    left: calc(50% - 200px);
+  }
+}

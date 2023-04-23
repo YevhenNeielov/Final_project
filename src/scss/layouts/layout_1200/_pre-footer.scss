@@ -1,7 +1,7 @@
 .pre-footer {
   padding: 0;
   display: grid;
-  grid-template-columns: auto 570px 60px 570px auto;
+  grid-template-columns: minmax(10px, auto) 560px 60px 560px minmax(10px, auto);
   align-items: center;
 
   @include e(form-box) {
@@ -16,5 +16,15 @@
 
   @include e(image) {
     @include image();
+  }
+
+  @include e(cat-spinner) {
+    max-width: 400px;
+    bottom: -40px;
+  }
+
+  @include e(registration-done) {
+    top: calc(50% - 40px);
+    left: calc(50% - 283px);
   }
 }

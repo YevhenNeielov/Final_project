@@ -13,4 +13,9 @@
       border-color: $white;
     }
   }
+
+  @include e(cat-spinner) {
+    max-width: 350px;
+    bottom: -30px;
+  }
 }

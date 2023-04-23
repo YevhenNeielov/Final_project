@@ -1,3 +1,17 @@
+//form submit
+(function formSubmitFooter() {
+  $(".pre-footer__form").submit(function (e) {
+    e.preventDefault();
+    $(".pre-footer__form").addClass("pre-footer__hide");
+    $(".pre-footer__title").addClass("pre-footer__hide");
+    $(".pre-footer__cat-spinner").addClass("pre-footer__show");
+    setInterval(() => {
+      $(".pre-footer__cat-spinner").css("display", "none");
+      $(".pre-footer__registration-done").css("display", "block");
+    }, "5000");
+  });
+})();
+
 //main-slider movement
 (function sliderMovement() {
   $(window).mousemove(function (e) {

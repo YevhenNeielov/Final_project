@@ -3,6 +3,10 @@
   background-color: $colorButton;
   padding: 40px 10px;
 
+  @include e(form-box) {
+    position: relative;
+  }
+
   @include e(title) {
     font-size: rem(25px);
     color: $white;
@@ -52,9 +56,69 @@
     letter-spacing: 1px;
     border-radius: 5px;
     padding: 16px 60px;
+    cursor: pointer;
   }
 
   @include e(image-box) {
     display: none;
+  }
+
+  @include e(registration-done) {
+    position: absolute;
+    top: calc(50% - 40px);
+    font-size: rem(25px);
+    color: $white;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-weight: $baseFontWeight;
+    border: 3px solid $colorFooterHover;
+    padding: 10px;
+    display: none;
+  }
+
+  @include e(cat-spinner) {
+    position: absolute;
+    bottom: -30px;
+    max-width: 480px;
+    display: none;
+  }
+
+  @include e(cat-spinner-image) {
+    @include image();
+  }
+
+  @include e(hide) {
+    position: relative;
+    left: -200%;
+  }
+
+  @include e(show) {
+    display: initial;
+    animation: animateGrumpy 5s ease;
+  }
+}
+
+@keyframes animateGrumpy {
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  25% {
+    opacity: 1;
+    scale: 1.1;
+    transform: rotate(0);
+  }
+  50% {
+    scale: 0.9;
+    transform: rotate(5deg);
+  }
+  75% {
+    scale: 1.1;
+    transform: rotate(-5deg);
+  }
+  100% {
+    scale: 1;
+    transform: rotate(0);
   }
 }
