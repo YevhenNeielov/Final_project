@@ -193,12 +193,12 @@
 }
 
 .fixed {
-  position: fixed;
-  background-color: $white;
   top: -100%;
 }
 
 .fixed-go {
+  position: fixed;
+  background-color: $white;
   top: 0;
 }
 
